@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Tap Game</title>
+</head>
+<body>
+  <div id="game-area">
+    <button id="target">Tap Me!</button>
+  </div>
+  <div id="score">Score: 0</div>
+  <div id="actions">
+   
+    <button id="refer-btn">Get Refer Link</button>
+  </div>
+  <div id="output"></div>
+  <script>
+    // Retrieve the score from localStorage or set to 0 if not found
+    let score = localStorage.getItem("score") ? parseInt(localStorage.getItem("score")) : 0;
+
+    // Reference to elements
+    const target = document.getElementById("target");
+    const scoreDisplay = document.getElementById("score");
+    const gameArea = document.getElementById("game-area");
+    const taskBtn = document.getElementById("task-btn");
+    const referBtn = document.getElementById("refer-btn");
+    const output = document.getElementById("output");
+
+    // Initialize score display
+    scoreDisplay.textContent = `Score: ${score}`;
+
+    // Update score when target is clicked
+    target.addEventListener("click", () => {
+      score++;
+      scoreDisplay.textContent = `Score: ${score}`;
+      localStorage.setItem("score", score); // Save the score
+      moveTarget();
+    });
+
+    // Move the target to a random position
+    function moveTarget() {
+      const areaWidth = gameArea.offsetWidth;
+      const areaHeight = gameArea.offsetHeight;
+      const targetWidth = target.offsetWidth;
+      const targetHeight = target.offsetHeight;
+
+      const x = Math.random() * (areaWidth - targetWidth);
+      const y = Math.random() * (areaHeight - targetHeight);
+
+      target.style.left = `${x}px`;
+      target.style.top = `${y}px`;
+    }
+
+   
+
+    // Show referral link when "Refer" button is clicked
+    referBtn.addEventListener("click", () => {
+      output.textContent = "Your referral link: http://t.me/Applecoinmebot";
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+ 
+                    <h4>subscribe</h4>
+                </div>
+                <div class="boosters-button-data">
+                    <img src="./assets/images/apple.svg" width="20px" class="m-r-25">
+                    <h5 class="m-r-25">2500</h5>
+                    <span class="m-r-25">•</span>
+            <a href="https://www.youtube.com/@coinme.me1"><svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+ class="boosters-button">
+
+     class="boosters-button-detail">
+         class="boosters-button-image">
+       src="./assets/images/1.gif" width="45px">
+        
+        
+            
+                >follow us>
+                         class="boosters-button-data">
+                 src="./assets/images/apple.svg" width="20px" class="m-r-25">
+                 class="m-r-25">2500
+               
+              
+            
+        
+    
+
+    
+       <a href="https://t.me/coinmechannel"> width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg></a> 
+    </div>
+
+
