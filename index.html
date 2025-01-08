@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>TapGame</title>
+</head>
+<body>
+  <div id="game-area">
+    <button id="target">Tap Me!</button>
+  </div>
+  <div id="score">Score: 0</div>
+  <div id="actions">
+
+    <button id="refer-btn">Get Refer Link</button>
+  </div>
+  <div id="output"></div>
+  <script>
+    // Retrieve the score from localStorage or set to 0 if not found
+    let score = localStorage.getItem("score") ? parseInt(localStorage.getItem("score")) : 0;
+
+    // Reference to elements
+    const target = document.getElementById("target");
+    const scoreDisplay = document.getElementById("score");
+    const gameArea = document.getElementById("game-area");
+    const taskBtn = document.getElementById("task-btn");
+    const referBtn = document.getElementById("refer-btn");
+    const output = document.getElementById("output");
+
+    // Initialize score display
+    scoreDisplay.textContent = `Score: ${score}`;
+
+    // Update score when target is clicked
+    target.addEventListener("click", () => {
+      score++;
+      scoreDisplay.textContent = `Score: ${score}`;
+      localStorage.setItem("score", score); // Save the score
+      moveTarget();
+    });
+
+    // Move the target to a random position
+    function moveTarget() {
+      const areaWidth = gameArea.offsetWidth;
+      const areaHeight = gameArea.offsetHeight;
+      const targetWidth = target.offsetWidth;
+      const targetHeight = target.offsetHeight;
+
+      const x = Math.random() * (areaWidth - targetWidth);
+      const y = Math.random() * (areaHeight - targetHeight);
+
+      target.style.left = `${x}px`;
+      target.style.top = `${y}px`;
+    }
+
+
+
+    // Show referral link when "Refer" button is clicked
+    referBtn.addEventListener("click", () => {
+      output.textContent = "Your referral link: http://t.me/Applecoinmebot";
+    });
+  </script>
+</body>
+</html>
+ 
+                    <h4>subscribe</h4>
+                </div>
+                <div class="boosters-button-data">
+                    <img src="./assets/images/apple.svg" width="20px" class="m-r-25">
+                    <h5 class="m-r-25">2500</h5>
+                    <span class="m-r-25">•</span>
+            <a href="https://youtube.com/@rimshawasib1?si=KE4dPa5kMsg7ZvIU"><svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+
+
+
+
+
+       <a href="https://t.me/tapgamenewcoin"> width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 5L14.15 10C14.4237 10.2563 14.6419 10.5659 14.791 10.9099C14.9402 11.2539 15.0171 11.625 15.0171 12C15.0171 12.375 14.9402 12.7458 14.791 13.0898C14.6419 13.4339 14.4237 13.7437 14.15 14L9 19" stroke="#ffffff" opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg></a> 
+    </div>
+
+
+   
+   
+‎boost.js
++52
+Original file line number	Diff line number	Diff line change
+@@ -0,0 +1,52 @@
+const body = document.body;
+const today = new Date().toISOString().split('T')[0]; 
+let coins = Number(localStorage.getItem('coins')) || 0;
+const lastClaimDate = localStorage.getItem('lastClaimDate');
+body.querySelector('#balance').textContent = coins.toLocaleString();
+const turbo = body.querySelector('#turbo');
+const charge = body.querySelector('#charge');
+function canClaimReward() {
+    console.log('Last claim date:', lastClaimDate); 
+    console.log('Today:', today); 
+    return lastClaimDate !== today;
+}
+turbo.addEventListener('click', () => {
+    if (canClaimReward()) {
+        coins += ; 
+        localStorage.setItem('coins', coins); 
+        body.querySelector('#balance').textContent = coins.toLocaleString(); 
+        localStorage.setItem('lastClaimDate', today); 
+       
+        localStorage.setItem('count', '0');
+        setTimeout(() => {
+            localStorage.setItem('count', '1');
+        }, 5000);
+    } else {
+        alert('You can only claim this reward once a day.');
+    }
+});
+charge.addEventListener('click', () => {
+    if (canClaimReward()) {
+        coins += 3; 
+        localStorage.setItem('coins', coins); 
+        body.querySelector('#balance').textContent = coins.toLocaleString(); 
+        localStorage.setItem('lastClaimDate', today); 
+        let total = localStorage.getItem('total') || 0;
+        localStorage.setItem('power', total); 
+    } else {
+        alert('You can only claim this reward once a day.');
+    }
+});
+‎script.js
++52
+Original file line number	Diff line number	Diff line change
+@@ -38,3 +38,55 @@ taskBtn.addEventListener("click", () => {
+referBtn.addEventListener("click", () => {
+  output.textContent = "Your referral link: https://example.com/referral";
+});
+const body = document.body;
+const today = new Date().toISOString().split('T')[0]; 
+let coins = Number(localStorage.getItem('coins')) || 0;
+const lastClaimDate = localStorage.getItem('lastClaimDate');
+body.querySelector('#balance').textContent = coins.toLocaleString();
+const turbo = body.querySelector('#turbo');
+const charge = body.querySelector('#charge');
+function canClaimReward() {
+    console.log('Last claim date:', lastClaimDate); 
+    console.log('Today:', today); 
+    return lastClaimDate !== today;
+}
+turbo.addEventListener('click', () => {
+    if (canClaimReward()) {
+        coins += ; 
+        localStorage.setItem('coins', coins); 
+        body.querySelector('#balance').textContent = coins.toLocaleString(); 
+        localStorage.setItem('lastClaimDate', today); 
+       
+        localStorage.setItem('count', '0');
+        setTimeout(() => {
+            localStorage.setItem('count', '1');
+        }, 5000);
+    } else {
+        alert('You can only claim this reward once a day.');
+    }
+});
+charge.addEventListener('click', () => {
+    if (canClaimReward()) {
+        coins += 3; 
+        localStorage.setItem('coins', coins); 
+        body.querySelector('#balance').textContent = coins.toLocaleString(); 
+        localStorage.setItem('lastClaimDate', today); 
+        let total = localStorage.getItem('total') || 0;
+        localStorage.setItem('power', total); 
+    } else {
+        alert('You can only claim this reward once a day.');
+    }
+});
+‎style.css
++776
+Large diffs are not rendered by default.
+‎wallet.html
++53
+Original file line number	Diff line number	Diff line change
+@@ -0,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>- Boosters</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon/favicon.ico">
+    <link rel="icon" type="image/png" href="./assets/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="./assets/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="android-chrome-192x192" href="./assets/favicon/android-chrome-192x192.png" sizes="192x192">
+    <link rel="android-chrome-512x512" href="./assets/favicon/android-chrome-512x512.png" sizes="512x512">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body class="boost">
+    
+    <div class="haeder">
+        <a href="index.html">
+            <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 11.9299H2" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.00009 19L2.84009 14C2.5677 13.7429 2.35071 13.433 2.20239 13.0891C2.05407 12.7452 1.97754 12.3745 1.97754 12C1.97754 11.6255 2.05407 11.2548 2.20239 10.9109C2.35071 10.567 2.5677 10.2571 2.84009 10L8.00009 5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+       
+    </div>
+    <div class="user-balance">
+        <div class="balance-title">
+            <span class="select-none">Your balance</span>
+        </div>
+        <div class="coin-count-container">
+            <img src="./assets/images/apple.svg" width="45px">
+            <h1 class="select-none"></h1>
+        </div>
+        <br>
+        <div class="balance-guid">
+            <a href="guid.html" class="select-none"> earn more </a>
+        </div>
+    </div>
+ <script src="./assets/images/script1.js"></script>
+    <script src="./assets/js/charge.js"></script>
+    <script src="./assets/js/boost.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
